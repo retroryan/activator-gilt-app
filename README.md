@@ -1,4 +1,11 @@
-This is your new Play application
-=====================================
+A Gilt Activator Template for a Multi Project Play App 
+======================================================
 
-This file will be packaged with your application, when using `play dist`.
+This is a Typesafe activator template for generating a base multi project 
+Play application. 
+
+API Generation
+============== 
+
+The Controllers for the Play are generated from a JSON file (api.json) via
+a sbt generate-api... 

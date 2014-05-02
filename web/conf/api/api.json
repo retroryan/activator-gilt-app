@@ -4,7 +4,7 @@
     "description": "Host API documentation for REST services, and facilities design of resource first APIs.",
     "resources": {
 
-        "sample": {
+        "samples": {
             "description": "A sample is a top level object.",
             "fields": [
                 { "name": "guid", "type": "string", "description": "Internal unique identifier for this product." },
@@ -12,6 +12,7 @@
             ],
             "operations": [
                 {
+                    "path": "/:guid",
                     "method": "GET",
                     "description": "Get a single sample object",
                     "parameters": [

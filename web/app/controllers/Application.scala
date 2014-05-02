@@ -13,7 +13,7 @@ object Application extends Controller {
 
   def remote = Action.async {
     for {
-      json <- client.get("abc")
+      json <- client.getGuid("abc")
     } yield Ok(json)
   }
 }

@@ -1,14 +1,13 @@
 package controllers
 
 import play.api.mvc.{Action, Controller}
-import java.util.UUID
+
+import play.api.libs.json._
+import apidoc.ApiDoc.JsonFormats._
 
 object Sample extends Controller {
-  case class Sample(guid: String, name: String)
-
-  val sampleObj = Sample(UUID.randomUUID().toString, "testing 1 2 3...")
-
-  def get = Action {
-    Ok(sampleObj)
+  def get(guid: String) = Action {
+    val sampleObj = apidoc.ApiDoc.Sample(guid, "testing")
+    Ok(Json.toJson(sampleObj))
   }
 }

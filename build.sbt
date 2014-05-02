@@ -19,6 +19,7 @@ lazy val svc = project
   .settings(playScalaSettings: _*)
   .settings(commonSettings: _*)
   .settings(commonPlaySettings: _*)
+  .settings(routesGeneratorSettings: _*)
   .settings(
     version := "1.0-SNAPSHOT"
   )

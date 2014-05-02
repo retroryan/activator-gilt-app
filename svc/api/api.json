@@ -4,24 +4,24 @@
     "description": "Host API documentation for REST services, and facilities design of resource first APIs.",
     "resources": {
 
-        "product": {
-            "description": "A product is a top level object.",
+        "sample": {
+            "description": "A sample is a top level object.",
             "fields": [
                 { "name": "guid", "type": "string", "description": "Internal unique identifier for this product." },
-                { "name": "name", "type": "string" },
+                { "name": "name", "type": "string" }
             ],
             "operations": [
                 {
                     "method": "GET",
-                    "description": "Search all users. Results are always paginated. You must specify at least 1 parameter - either a guid, email or token.",
+                    "description": "Get a single sample object",
                     "parameters": [
-                        { "name": "guid", "type": "string", "description": "Product guid.", "required": false },
+                        { "name": "guid", "type": "string", "description": "Sample guid.", "required": true }
                     ],
                     "responses": [
-                        { "code": 200, "result": ["product"] }
+                        { "code": 200, "result": ["sample"] }
                     ]
-                },
+                }
             ]
-        },
+        }
     }
 }

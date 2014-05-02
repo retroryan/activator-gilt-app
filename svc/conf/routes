@@ -1,5 +1,6 @@
-# Routes
-# # This file defines all application routes (Higher priority routes first)
-# # ~~~~
-#
+GET     /sample     controllers.Sample.get(guid: String)
+
+#-----------------------------------
+# Custom routes                    |
+#-----------------------------------
 GET     /                           controllers.Application.index()

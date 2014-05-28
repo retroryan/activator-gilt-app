@@ -5,13 +5,11 @@ playScalaSettings
 lazy val core = project
   .settings(commonSettings: _*)
   .settings(
-    version := "1.0-SNAPSHOT",
-    libraryDependencies ++= Seq(
-      "com.typesafe.play" %% "play-json" % "2.2.3"
-    ),
-    // Temporary addition until api.json is moved.
-    unmanagedClasspath in Test += (baseDirectory in ThisBuild).value / "svc"
-  )
+    version := "1.0-SNAPSHOT"
+   )
+  .settings(playScalaSettings: _*)
+  .settings(commonSettings: _*)
+  .settings(commonPlaySettings: _*)
 
 lazy val svc = project
   .dependsOn(core)
@@ -19,8 +17,6 @@ lazy val svc = project
   .settings(playScalaSettings: _*)
   .settings(commonSettings: _*)
   .settings(commonPlaySettings: _*)
-  .settings(apiGeneratorSettings: _*) // Adds client and JSON converters
-  .settings(routesGeneratorSettings: _*)
   .settings(
     version := "1.0-SNAPSHOT"
   )
@@ -31,7 +27,6 @@ lazy val web = project
   .settings(playScalaSettings: _*)
   .settings(commonSettings: _*)
   .settings(commonPlaySettings: _*)
-  .settings(apiGeneratorSettings: _*) // Adds client and JSON converters
   .settings(
     version := "1.0-SNAPSHOT",
     libraryDependencies ++= Seq(
